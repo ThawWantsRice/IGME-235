@@ -13,42 +13,26 @@
 
 </head>
 <body>
+    <header class="container">
+        <h1 class="centered">Dog Pictures For Your Use</h1>
+    </header>
 
-<header>
-    <a id="homeLink" href="#">
-        <i class="fas fa-home"></i>
-    </a>
-</header>
-
-<h1>Dog Pictures For Your Use</h1>
-
-
-<!-- Dog breed dropdown -->
-<div id="dogBreedsStatus"></div>
-
-<button id="clearLocalStorage">Clear Local Storage</button>
-
-<div id="content">
-    <select id="breedDropdown"></select>
-
-    <!-- Sub-Breed Dropdown -->
-    <select id="subBreedDropdown" style="display: none;"></select>
-
-    <button id="searchButton">Search Random Image</button>
-
-    <div id="breedInfo"></div>
-
-    <div id="imageContainer">
-        <img id="dogImage" src="placeholder-image.jpg" alt="Random Dog Image">
-        <div id="imageSearchStatus"></div>
+    <div>
+        <a id="homeLink" href="#"><i class="fas fa-home"></i></a>
+        <select id="breedDropdown"></select>
+        <select id="subBreedDropdown" style="display: none;"></select>
+        <button id="searchButton">Search Random Image</button>
+        <button id="clearLocalStorage">Clear Local Storage</button>
     </div>
-</div>
 
+    <div id="content">
+        <div id="breedInfo"></div>
+    </div>
 
-
-<footer>
-    &copy Thaw Thaw (Don't Steal)
-</footer>
+    <footer>
+        &copy Thaw Thaw (Don't Steal)
+    </footer>
+</body>
 
 </body>
 </html>

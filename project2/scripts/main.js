@@ -136,11 +136,14 @@ function displayRandomImage(selectedBreed, imageUrl) {
     const dogImage = document.querySelector("#dogImage");
     const imageSearchStatus = document.querySelector("#imageSearchStatus");
     const breedInfo = document.querySelector("#breedInfo");
+    let formattedBreed = selectedBreed.charAt(0).toUpperCase() + selectedBreed.slice(1);
 
     const recentImages = JSON.parse(localStorage.getItem("recentImages")) || [];
 
-    if (!recentImages.includes(imageUrl)) {
-        dogImage.src = imageUrl;
+    if (recentImages.includes(imageUrl)) {
+        imageSearchStatus.innerHTML = `<b>Image already displayed for the ${selectedBreed} breed</b>`;
+    }
+
 
         recentImages.push(imageUrl);
 
@@ -150,7 +153,17 @@ function displayRandomImage(selectedBreed, imageUrl) {
 
         localStorage.setItem("recentImages", JSON.stringify(recentImages));
 
-        let breedInfoContent = `<b>Breed Info:</b><p><i>Name: ${selectedBreed}</i></p>`;
+        let breedInfoContent = `<p>Dog Breed: ${formattedBreed}</p>`;
+        breedInfoContent += `<img src="${imageUrl}" alt="Image of a ${formattedBreed}">`;
+        breedInfoContent += `<button id="saveButton">Save</button>`;
+
+        let saveButton = document.querySelector("#saveButton");
+        saveButton.addEventListener("click", function () {
+            let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
+            savedImages.push(imageUrl);
+            localStorage.setItem("savedImages", JSON.stringify(savedImages));
+            alert("Image saved!");
+        });
 
         const subBreedsUrl = `https://dog.ceo/api/breed/${selectedBreed}/list`;
 
@@ -160,20 +173,16 @@ function displayRandomImage(selectedBreed, imageUrl) {
                 if (xhrSubBreeds.status == 200) {
                     const subBreedsData = JSON.parse(xhrSubBreeds.responseText);
                     breedInfo.innerHTML = breedInfoContent;
-
-                    imageSearchStatus.innerHTML = `<b>Success!</b><p><i>Random image of the ${selectedBreed} breed</i></p>`;
                 } else {
                     console.error("Error fetching sub-breeds:", xhrSubBreeds.statusText);
                 }
             }
         };
-
         xhrSubBreeds.open("GET", subBreedsUrl);
         xhrSubBreeds.send();
-    } else {
-        imageSearchStatus.innerHTML = `<b>Image already displayed for the ${selectedBreed} breed</b>`;
-    }
-}
+    } 
+    
+
 
 function getDogBreeds() {
     const DOG_API_URL = "https://dog.ceo/api/breeds/list/all";
@@ -206,8 +215,6 @@ function displayDogBreeds(dogBreeds) {
         option.text = breed[0].toUpperCase() + breed.slice(1);
         breedDropdown.add(option);
     }
-
-    document.querySelector("#dogBreedsStatus").innerHTML = "<b>Success!</b><p><i>Here are dog breeds</i></p>";
 }
 
 function searchImagesForSubBreed(selectedBreed, subBreed) {
