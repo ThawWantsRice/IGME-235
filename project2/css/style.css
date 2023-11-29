@@ -1,0 +1,85 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    background-image: url("../images/dogs.jpg");
+    height:100px;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    opacity: .7;
+    padding: 50px;
+}
+
+#headerText{
+    text-align: center;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+}
+
+#dogImage{
+    max-width: 100%;
+}
+
+#content {
+    display: grid;
+    grid-template-rows: auto auto; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    align-content: center;
+    max-width: 70%; 
+    margin: auto; 
+    padding: 20px; 
+}
+
+#breedDropdown {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0; 
+}
+
+#searchButton {
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0; 
+}
+
+#breedInfo {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#imageContainer{
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#homeLink {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
+
+#homeLink i {
+    margin-right: 5px; /* Adjust as needed */
+}

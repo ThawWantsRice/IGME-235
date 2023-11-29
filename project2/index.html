@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/main.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+</head>
+<body>
+
+<header>
+    <a id="homeLink" href="#">
+        <i class="fas fa-home"></i>
+    </a>
+</header>
+
+<h1>Dog Pictures For Your Use</h1>
+
+
+<!-- Dog breed dropdown -->
+<div id="dogBreedsStatus"></div>
+
+<button id="clearLocalStorage">Clear Local Storage</button>
+
+<div id="content">
+    <select id="breedDropdown"></select>
+
+    <!-- Sub-Breed Dropdown -->
+    <select id="subBreedDropdown" style="display: none;"></select>
+
+    <button id="searchButton">Search Random Image</button>
+
+    <div id="breedInfo"></div>
+
+    <div id="imageContainer">
+        <img id="dogImage" src="placeholder-image.jpg" alt="Random Dog Image">
+        <div id="imageSearchStatus"></div>
+    </div>
+</div>
+
+
+
+<footer>
+    &copy Thaw Thaw (Don't Steal)
+</footer>
+
+</body>
+</html>
