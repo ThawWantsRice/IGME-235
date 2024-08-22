@@ -1,0 +1,165 @@
+body {
+  color:#fcf5e3;
+  font-family: "Calligraffitti";
+  text-align: center;
+  background: brown url(../images/table.jpg);
+}
+
+#above-cards {
+  display: flex;
+  background-color: white;
+  margin: 20px; /* Adjust the margin as needed */
+  padding: 20px; /* Adjust the padding as needed */
+  width: 300px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#game {
+  background: #9c9;
+  padding: 5px;
+
+  position: relative;
+  background: #232 url(../images/bg.jpg);
+  width: 40%;
+  height: 20%;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  border: 1px solid #666;
+  box-shadow: 0 -1px 0 #999, 0 1px 0 #999, inset 0 1px 6px #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center;
+  width: 380px;
+  height: 400px;
+}
+
+/* Define the 3D perspective view and dimension of each card. */
+.card {
+  perspective: 600px;
+  position: relative; /* Adjusted to make the position relative to its container */
+  width: 63px;
+  height: 67px;
+  margin: 5px 5px 10px 5px; /* Add margin to create space between cards and between rows */
+  transition: all .3s;
+}
+.face {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all .3s;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #999 url(../images/back.jpg) 0 -480px;
+}
+.back {
+  background: #efefef url(../images/food.jpg);
+  transform: rotate3d(0,1,0,-180deg);
+}
+
+.card-flipped .front {
+  transform: rotate3d(0,1,0,180deg);
+}
+.card-flipped .back {
+  transform: rotate3d(0,1,0,0deg);
+}
+
+.card-removed {
+  opacity: 0;
+}
+
+.card-dance {
+  animation-name: cardDance;
+  animation-duration: 1s;
+  /* Add more animation properties as needed */
+}
+
+@keyframes cardDance {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Additional styles for above cards */
+.above-card {
+  perspective: 600px;
+  position: relative;
+  width: 63px;
+  height: 67px;
+  margin: 5px 5px 10px 5px;
+  transition: all .3s;
+}
+
+.above-card .face {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all .3s;
+  backface-visibility: hidden;
+}
+
+/*
+*** CSS Spritesheets ***
+Here we define the face graphics of the card deck:
+R=row & C=column
+.cardR01C01 would be card #1 in the upper-left corner
+.cardR04C13 would be card #52 in the bottom-right corner
+and so on ...
+
+We have only defined 24 card faces below - you would need to do the other 28 yourself
+(The cards are 80x120 in size)
+*/
+
+/* Row 1 */
+.cardR01C01 {background-position:  12px 0;}
+.cardR01C02 {background-position:  -63px 0;}
+.cardR01C03 {background-position: -125px 0;}
+.cardR01C04 {background-position: -188px 0;}
+.cardR01C05 {background-position: -248px 0;}
+.cardR01C06 {background-position: -312px 0;}
+.cardR01C07 {background-position: -374px 0;}
+.cardR01C08 {background-position: -436px 0;}
+.cardR01C09 {background-position: -497px 0;}
+.cardR01C10 {background-position: -559px 0;}
+
+a{
+  font-size: 30px;
+}
+
+a:link{
+  color: wheat;
+}
+
+a:visited{
+  color: wheat;
+}
+
+a:hover{
+  color: red;
+}

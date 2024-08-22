@@ -1,0 +1,139 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-size: 35px;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Center the content in the middle of the page */
+#container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "title"
+    "box1"
+    "box2"
+    "feedback" 
+    "box3";
+}
+
+@media screen and (min-width:760px){
+    #container {
+        display: grid;
+        grid-template-areas: 
+            "logo title"
+            "box1 box2"
+            "feedback box3"
+        ;
+    }
+}
+
+h1.logo{
+    grid-area: logo; 
+    width: 300px;
+    height: 200px;
+    background: url(../media/pen-logo.jpg) no-repeat;
+    border: 1px solid black;
+    text-indent: -9999px;
+}
+
+#title{
+    grid-area: title;
+    margin-top: 50px;
+}
+
+.blue{
+    background-color: rgb(126,118,169);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    font-size: 30px;
+}
+
+img{
+    width: 300px;
+    float: right;
+    margin: 0 0 0 15px;
+}
+
+
+.title{
+    font-size: 80px;
+    color: rgb(184,173,155); 
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    color: rgb(45,57,109);
+}
+
+h3{
+    color: rgb(151,139,113);
+}
+
+#box1{
+    grid-area: box1;
+    padding: 20px;
+}
+
+#box2{
+    grid-area: box2;
+    padding: 20px;
+}
+
+#feedback{
+    grid-area: feedback;
+    padding: 20px;
+}
+
+.brown{
+    background-color: rgb(151,139,113);
+}
+
+#box3{
+    grid-area: box3;
+    padding: 20px;
+    background-image: url("../media/car-background.jpg") no-repeat;
+    background-color: #cccccc;
+}
+
+@media screen and (max-width: 760px) {
+    #container{
+        display: grid;
+        grid-template-areas:
+        "logo" 
+        "title"
+        "box1"
+        "box2"
+        "feedback"
+        "box3"
+        ;
+    }
+    h1.logo{
+        display: none;
+    }
+    
+}
+
+
+/* Style the footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

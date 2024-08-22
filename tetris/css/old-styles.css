@@ -1,0 +1,27 @@
+/* Do everything in this file */
+
+h2, h3 {
+    border-bottom: 5px solid red;
+    clear: both;
+}
+
+figure{
+    float: right;
+    width: 40%;
+    margin-left: 50px;
+    padding: auto;
+}
+
+div{
+    float: left;
+    width: 40%;
+    padding: 50px;
+    border: 3px solid black;
+}
+
+footer{
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    z-index: -1;
+}

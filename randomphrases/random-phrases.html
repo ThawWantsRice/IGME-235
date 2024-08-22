@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Phrases</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Martian+Mono:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Random Phrases Page</h1>
+    </header>
+
+    <div class="content">
+        <h2>Yoda Says:</h2>
+        <div id="dynamic-content">
+            <img src="images/Yoda_1.webp" alt="Yoda">
+            <p id="text">You Won't see this</p>
+        </div>
+        <button id="generate-button">Generate Random Quote</button>
+    </div>
+
+    <footer>
+        <p>@ Thaw Thaw(Don't steal)</p>
+    </footer>
+
+    <script>
+        const quotes = [
+            '"Always pass on what you have learned."',
+            '"Patience you must have my young Padawan."',
+            '"Your path you must decide."',
+            '"Feel the force!"',
+            '"Do or do not. There is no try."',
+            '"Control, control, you must learn control!"'
+        ];
+
+        const quoteElement = document.getElementById("text");
+        const generateButton = document.getElementById("generate-button");
+
+        // Function to generate and display a random quote
+        function displayQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            quoteElement.textContent = randomQuote;
+        }
+
+        // Display a random quote on page load
+        displayQuote();
+
+        generateButton.addEventListener("click", displayQuote);
+    </script>
+</body>
+</html>
